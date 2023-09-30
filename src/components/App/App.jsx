@@ -1,14 +1,20 @@
-// import { useState } from 'react'
+// import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css'
+// import { useState } from 'react'
+
+import Auth from '../Auth/Auth';
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
-       <h2>Hello word</h2>
+
+      <Routes>
+        <Route path='/sign-in' element={<Auth/>}/>
+      </Routes>
     </>
   )
 }
 
-export default App
+export default App;
