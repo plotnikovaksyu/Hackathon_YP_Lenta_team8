@@ -3,6 +3,7 @@ import './Auth.css';
 import '../../utils/opacity.css';
 import logo from '../../images/main_logo.svg';
 import arrow from '../../images/outline.svg';
+import eye from '../../images/eye.svg'
 import { useState } from 'react';
 
 
@@ -15,6 +16,11 @@ function Auth() {
 
     const [errors, setErrors] = useState({});
     const [isValid, setIsValid] = useState(false);
+    const [passwordShown, setPasswordShown] = useState(false)
+
+    const togglePassword = () => {
+        setPasswordShown(!passwordShown)
+    }
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -55,12 +61,13 @@ function Auth() {
                             placeholder='Введите пароль'
                             required
                             name='password'
-                            type='password'
+                            type={passwordShown ? "text" : 'password'}
                             value={userRegistrationData.password}
                             onChange={handleChange}
 
                         >
                         </input>
+                        <img className='auth_password' src={eye} onClick={togglePassword} />
                         <span className="auth__error">{errors.password}</span>
                         <button className='auth__button opacity'
                             type='submit'
