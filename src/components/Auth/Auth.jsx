@@ -8,8 +8,8 @@ import eye from '../../images/eye.svg';
 import { useState } from 'react';
 
 
-function Auth() {
-   
+function Auth({ login }) {
+
     const [userRegistrationData, setUserRegistrationData] = useState({
         login: "",
         password: "",
@@ -38,10 +38,11 @@ function Auth() {
 
     function handleSubmit(e) {
         e.preventDefault();
+        login();
     }
 
-       //изменить иконку submit button при нажатии
-       const pressSubmitButton = () => {
+    //изменить иконку submit button при нажатии
+    const pressSubmitButton = () => {
         setPress(true);
     }
 
@@ -94,10 +95,10 @@ function Auth() {
                             aria-label='авторизоваться'>
                             Войти
                             <img className='auth__arrow'
-                            src={!press ? arrow : arrowYellow}
-                            alt='авторизоваться'/>
+                                src={!press ? arrow : arrowYellow}
+                                alt='авторизоваться' />
                         </button>
-                        
+
                     </fieldset>
                     <div className='auth__links'>
                         <a className='auth__link opacity' href='#'>Забыли пароль?</a>
