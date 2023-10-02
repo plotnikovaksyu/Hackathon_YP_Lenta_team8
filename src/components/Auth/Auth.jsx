@@ -3,12 +3,13 @@ import './Auth.css';
 import '../../utils/opacity.css';
 import logo from '../../images/main_logo.svg';
 import arrow from '../../images/outline.svg';
-import eye from '../../images/eye.svg'
+import arrowYellow from '../../images/outlineY.svg'
+import eye from '../../images/eye.svg';
 import { useState } from 'react';
 
 
 function Auth() {
-
+   
     const [userRegistrationData, setUserRegistrationData] = useState({
         login: "",
         password: "",
@@ -17,6 +18,8 @@ function Auth() {
     const [errors, setErrors] = useState({});
     const [isValid, setIsValid] = useState(false);
     const [passwordShown, setPasswordShown] = useState(false)
+
+    const [press, setPress] = useState(false);
 
     const togglePassword = () => {
         setPasswordShown(!passwordShown)
@@ -36,6 +39,16 @@ function Auth() {
     function handleSubmit(e) {
         e.preventDefault();
     }
+
+       //изменить иконку submit button при нажатии
+       const pressSubmitButton = () => {
+        setPress(true);
+    }
+
+    const pushUpSubmitButton = () => {
+        setPress(false);
+    }
+
 
     return (
         <section className='auth'>
@@ -74,12 +87,17 @@ function Auth() {
                             <span className="auth__error">{errors.password}</span>
                         </div>
 
-                        <button className='auth__button opacity'
+                        <button className='auth__button'
                             type='submit'
+                            onPointerDown={pressSubmitButton}
+                            onPointerUp={pushUpSubmitButton}
                             aria-label='авторизоваться'>
                             Войти
-                            <img className='auth__arrow' src={arrow} alt='авторизоваться' />
+                            <img className='auth__arrow'
+                            src={!press ? arrow : arrowYellow}
+                            alt='авторизоваться'/>
                         </button>
+                        
                     </fieldset>
                     <div className='auth__links'>
                         <a className='auth__link opacity' href='#'>Забыли пароль?</a>
