@@ -47,28 +47,33 @@ function Auth() {
                     <h2 className='auth__title'>Добрый день!</h2>
                     <p className='auth__text'>Используйте для входа логин или персональный Лента&nbsp;ID</p>
                     <fieldset className='auth__fieldset'>
-                        <input className='auth__input auth__input_login'
-                            placeholder='Введите логин или ID'
-                            required
-                            name='login'
-                            type='text'
-                            value={userRegistrationData.login}
-                            onChange={handleChange}
-                        >
-                        </input>
-                        <span className="auth__error">{errors.login}</span>
-                        <input className='auth__input auth__input_password'
-                            placeholder='Введите пароль'
-                            required
-                            name='password'
-                            type={passwordShown ? "text" : 'password'}
-                            value={userRegistrationData.password}
-                            onChange={handleChange}
+                        <div className="input__container">
+                            <input className='auth__input auth__input_login'
+                                placeholder='Введите логин или ID'
+                                required
+                                name='login'
+                                type='text'
+                                value={userRegistrationData.login}
+                                onChange={handleChange}
+                            >
+                            </input>
+                            <span className="auth__error">{errors.login}</span>
+                        </div>
+                        <div className="input__container">
+                            <input className='auth__input auth__input_password'
+                                placeholder='Введите пароль'
+                                required
+                                name='password'
+                                type={passwordShown ? "text" : 'password'}
+                                value={userRegistrationData.password}
+                                onChange={handleChange}
 
-                        >
-                        </input>
-                        <img className='auth_password' src={eye} onClick={togglePassword} />
-                        <span className="auth__error">{errors.password}</span>
+                            >
+                            </input>
+                            <img className='auth_password' src={eye} onClick={togglePassword} />
+                            <span className="auth__error">{errors.password}</span>
+                        </div>
+
                         <button className='auth__button opacity'
                             type='submit'
                             aria-label='авторизоваться'>
