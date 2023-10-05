@@ -1,12 +1,15 @@
 // import { useState } from 'react'
-import './App.css'
-import Navbar from '../Navbar/Navbar'
+import './App.css';
+import Navbar from '../Navbar/Navbar';
+import PopupWithTk from '../PopupTK/PopupWithTk';
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
-    <Navbar />
+    <>
+      <Navbar />
+      <PopupWithTk></PopupWithTk>
+    </>
   )
 }
 

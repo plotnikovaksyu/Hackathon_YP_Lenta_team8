@@ -202,6 +202,7 @@ function Navbar() {
                     {isShort
                         ? (<Tooltip text='Развернуть меню'>
                             <button className='navbar__tumbler button'
+                                type='button'
                                 onPointerDown={toggleDownReveal}
                                 onPointerUp={toggleUpReveal}
                                 onClick={toggleShortBar}>
@@ -212,6 +213,7 @@ function Navbar() {
                         </Tooltip>)
                         : (<Tooltip text='Свернуть меню'>
                             <button className='navbar__tumbler navbar__tumbler_full button'
+                                type='button'
                                 onPointerDown={toggleDownHide}
                                 onPointerUp={toggleUpHide}
                                 onClick={toggleFullBar}>
@@ -274,6 +276,7 @@ function Navbar() {
                                         <Tooltip text='Выйти из аккаунта'>
                                             <li className='navbar__item'>
                                                 <button className='navbar__exit button'
+                                                    type='button'
                                                     onPointerDown={toggleDownExit}
                                                     onPointerUp={toggleUpExit}
                                                 >
@@ -310,49 +313,50 @@ function Navbar() {
                                         </li>
                                     </Tooltip>
                                     <Tooltip text='Настройки'>
-                                    <li className='navbar__item'>
-                                        <a className='navbar__link navbar__link_full'
-                                            href='#'
-                                            onPointerDown={toggleDownSetting}
-                                            onPointerUp={toggleUpSetting}
-                                            lang='ru'
-                                            target='_blank'
-                                            rel='noreferrer'>
-                                            <img className='navbar__icon navbar__icon_full'
-                                                src={!isSetting ? setting : settingYellow}
-                                                alt='настройки' />
-                                            Настройки
-                                        </a>
-                                    </li>
+                                        <li className='navbar__item'>
+                                            <a className='navbar__link navbar__link_full'
+                                                href='#'
+                                                onPointerDown={toggleDownSetting}
+                                                onPointerUp={toggleUpSetting}
+                                                lang='ru'
+                                                target='_blank'
+                                                rel='noreferrer'>
+                                                <img className='navbar__icon navbar__icon_full'
+                                                    src={!isSetting ? setting : settingYellow}
+                                                    alt='настройки' />
+                                                Настройки
+                                            </a>
+                                        </li>
                                     </Tooltip>
                                     <Tooltip text='Связаться с поддержкой'>
-                                    <li className='navbar__item'>
-                                        <a className='navbar__link navbar__link_full'
-                                            href='#'
-                                            onPointerDown={toggleDownSupport}
-                                            onPointerUp={toggleUpSupport}
-                                            lang='ru'
-                                            target='_blank'
-                                            rel='noreferrer'>
-                                            <img className='navbar__icon navbar__icon_full'
-                                                src={!isSupport ? support : supportYellow}
-                                                alt='связаться с поддержкой' />
-                                            Связаться с поддержкой
-                                        </a>
-                                    </li>
+                                        <li className='navbar__item'>
+                                            <a className='navbar__link navbar__link_full'
+                                                href='#'
+                                                onPointerDown={toggleDownSupport}
+                                                onPointerUp={toggleUpSupport}
+                                                lang='ru'
+                                                target='_blank'
+                                                rel='noreferrer'>
+                                                <img className='navbar__icon navbar__icon_full'
+                                                    src={!isSupport ? support : supportYellow}
+                                                    alt='связаться с поддержкой' />
+                                                Связаться с поддержкой
+                                            </a>
+                                        </li>
                                     </Tooltip>
                                     <Tooltip text='Выйти из аккаунта'>
-                                    <li className='navbar__item'>
-                                        <button className='navbar__exit navbar__exit_full button navbar__link_full'
-                                            onPointerDown={toggleDownExit}
-                                            onPointerUp={toggleUpExit}
-                                        >
-                                            <img className='navbar__icon navbar__icon_full'
-                                                src={!isExit ? exit : exitYellow}
-                                                alt='выйти из аккаунта' />
-                                            Выйти
-                                        </button>
-                                    </li>
+                                        <li className='navbar__item'>
+                                            <button className='navbar__exit navbar__exit_full button navbar__link_full'
+                                                type='button'
+                                                onPointerDown={toggleDownExit}
+                                                onPointerUp={toggleUpExit}
+                                            >
+                                                <img className='navbar__icon navbar__icon_full'
+                                                    src={!isExit ? exit : exitYellow}
+                                                    alt='выйти из аккаунта' />
+                                                Выйти
+                                            </button>
+                                        </li>
                                     </Tooltip>
                                 </ul>
                                 <div className='navbar__avatar-block navbar__avatar-block_full'>
