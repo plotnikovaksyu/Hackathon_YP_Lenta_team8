@@ -9,7 +9,7 @@ function Tooltip({ children, text, ...rest }) {
     function showTooltip() {
         refSetTimeout.current = setTimeout(() => {
             setShow(true);
-        }, 500)
+        }, 1000)
     }
 
     function hideTooltip() {
