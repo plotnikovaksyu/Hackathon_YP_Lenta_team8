@@ -132,6 +132,9 @@
     margin-bottom: 0px;
     width: 52px;
     height: 52px;
+}
+
+.button:focus {
     outline: none
 }
 
