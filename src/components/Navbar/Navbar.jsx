@@ -25,6 +25,8 @@ import decorativeBig from '../../images/decorativeBig.svg';
 
 import './Navbar.css';
 
+import Tooltip from '../Tooltip/Tooltip';
+
 function Navbar() {
 
     const [isShort, setIsShort] = useState(true);
@@ -128,138 +130,159 @@ function Navbar() {
                 <nav>
                     {isShort
                         ? (<ul className='navbar__list navbar__list_up'>
-                            <li className='navbar__item navbar__item_short'>
-                                <a className='navbar__link navbar__forecast'
-                                    href='#'
-                                    onPointerDown={toggleDownForecast}
-                                    onPointerUp={toggleUpForecast}
-                                    lang='ru'
-                                    target='_blank'
-                                    rel='noreferrer'>
-                                    <img className='navbar__icon'
-                                        src={!isForecast ? forecast : forecastYellow}
-                                        alt='Прогноз спроса' />
-                                </a>
-                            </li>
-                            <li className='navbar__item navbar__item_short '>
-                                <a className='navbar__link navbar__statistics'
-                                    href='#'
-                                    onPointerDown={toggleDownStatistics}
-                                    onPointerUp={toggleUpStatistics}
-                                    lang='ru'
-                                    target='_blank'
-                                    rel='noreferrer'>
-                                    <img className='navbar__icon'
-                                        src={!isStatistics ? statistics : statisticsYellow}
-                                        alt='Статистика' />
-                                </a>
-                            </li>
+                            <Tooltip text='Прогноз спроса'>
+                                <li className='navbar__item navbar__item_short'>
+                                    <a className='navbar__link navbar__forecast'
+                                        href='#'
+                                        onPointerDown={toggleDownForecast}
+                                        onPointerUp={toggleUpForecast}
+                                        lang='ru'
+                                        target='_blank'
+                                        rel='noreferrer'>
+                                        <img className='navbar__icon'
+                                            src={!isForecast ? forecast : forecastYellow}
+                                            alt='Прогноз спроса' />
+                                    </a>
+                                </li>
+                            </Tooltip>
+
+                            <Tooltip text='Статистика'>
+                                <li className='navbar__item navbar__item_short '>
+                                    <a className='navbar__link navbar__statistics'
+                                        href='#'
+                                        onPointerDown={toggleDownStatistics}
+                                        onPointerUp={toggleUpStatistics}
+                                        lang='ru'
+                                        target='_blank'
+                                        rel='noreferrer'>
+                                        <img className='navbar__icon'
+                                            src={!isStatistics ? statistics : statisticsYellow}
+                                            alt='Статистика' />
+                                    </a>
+                                </li>
+                            </Tooltip>
                         </ul>)
                         : (<ul className='navbar__list navbar__list_up'>
-                            <li className='navbar__item navbar__item_full navbar__forecast'>
-                                <a className='navbar__link navbar__link_full'
-                                    href=''
-                                    onPointerDown={toggleDownForecast}
-                                    onPointerUp={toggleUpForecast}
-                                    lang='ru'
-                                    target='_blank'
-                                    rel='noreferrer'>
-                                    <img className='navbar__icon navbar__icon_full'
-                                        src={!isForecast ? forecast : forecastYellow}
-                                        alt='Прогноз спроса' />
-                                    Прогноз спроса
-                                </a>
-                            </li>
-                            <li className='navbar__item navbar__item_full navbar__statistics'>
-                                <a className='navbar__link navbar__link_full'
-                                    href='#'
-                                    onPointerDown={toggleDownStatistics}
-                                    onPointerUp={toggleUpStatistics}
-                                    lang='ru'
-                                    target='_blank'
-                                    rel='noreferrer'>
-                                    <img className='navbar__icon navbar__icon_full'
-                                        src={!isStatistics ? statistics : statisticsYellow}
-                                        alt='Статистика' />
-                                    Статистика
-                                </a>
-                            </li>
+                            <Tooltip text='Прогноз спроса'>
+                                <li className='navbar__item navbar__item_full navbar__forecast'>
+                                    <a className='navbar__link navbar__link_full'
+                                        href=''
+                                        onPointerDown={toggleDownForecast}
+                                        onPointerUp={toggleUpForecast}
+                                        lang='ru'
+                                        target='_blank'
+                                        rel='noreferrer'>
+                                        <img className='navbar__icon navbar__icon_full'
+                                            src={!isForecast ? forecast : forecastYellow}
+                                            alt='Прогноз спроса' />
+                                        Прогноз спроса
+                                    </a>
+                                </li>
+                            </Tooltip>
+                            <Tooltip text='Статистика'>
+                                <li className='navbar__item navbar__item_full navbar__statistics'>
+                                    <a className='navbar__link navbar__link_full'
+                                        href='#'
+                                        onPointerDown={toggleDownStatistics}
+                                        onPointerUp={toggleUpStatistics}
+                                        lang='ru'
+                                        target='_blank'
+                                        rel='noreferrer'>
+                                        <img className='navbar__icon navbar__icon_full'
+                                            src={!isStatistics ? statistics : statisticsYellow}
+                                            alt='Статистика' />
+                                        Статистика
+                                    </a>
+                                </li>
+                            </Tooltip>
                         </ul>)}
                 </nav>
 
                 <div className='navbar__block'>
                     {isShort
-                        ? (<button className='navbar__tumbler button'
-                            onPointerDown={toggleDownReveal}
-                            onPointerUp={toggleUpReveal}
-                            onClick={toggleShortBar}>
-                            <img className='navbar__icon navbar__icon-tumbler'
-                                src={!isReveal ? reveal : revealYellow}
-                                alt='развернуть меню' />
-                        </button>)
-                        : (<button className='navbar__tumbler navbar__tumbler_full button'
-                            onPointerDown={toggleDownHide}
-                            onPointerUp={toggleUpHide}
-                            onClick={toggleFullBar}>
-                            <img className='navbar__icon navbar__icon-tumbler navbar__icon-tumbler_full'
-                                src={!isHide ? hide : hideYellow}
-                                alt='скрыть меню' />
-                        </button>)}
+                        ? (<Tooltip text='Развернуть меню'>
+                            <button className='navbar__tumbler button'
+                                onPointerDown={toggleDownReveal}
+                                onPointerUp={toggleUpReveal}
+                                onClick={toggleShortBar}>
+                                <img className='navbar__icon navbar__icon-tumbler'
+                                    src={!isReveal ? reveal : revealYellow}
+                                    alt='развернуть меню' />
+                            </button>
+                        </Tooltip>)
+                        : (<Tooltip text='Свернуть меню'>
+                            <button className='navbar__tumbler navbar__tumbler_full button'
+                                onPointerDown={toggleDownHide}
+                                onPointerUp={toggleUpHide}
+                                onClick={toggleFullBar}>
+                                <img className='navbar__icon navbar__icon-tumbler navbar__icon-tumbler_full'
+                                    src={!isHide ? hide : hideYellow}
+                                    alt='свернуть меню' />
+                            </button>
+                        </Tooltip>)}
 
                     <nav className='navbar__lower-half'>
                         {isShort
                             ? (
                                 <>
                                     <ul className='navbar__list navbar__list_down'>
-                                        <li className='navbar__item'>
-                                            <a className='navbar__link'
-                                                href='#'
-                                                onPointerDown={toggleDownNotification}
-                                                onPointerUp={toggleUpNotification}
-                                                lang='ru'
-                                                target='_blank'
-                                                rel='noreferrer'>
-                                                <img className='navbar__icon'
-                                                    src={!isNotification ? bell : bellYellow}
-                                                    alt='уведомления' />
-                                            </a>
-                                        </li>
-                                        <li className='navbar__item'>
-                                            <a className='navbar__link'
-                                                href='#'
-                                                onPointerDown={toggleDownSetting}
-                                                onPointerUp={toggleUpSetting}
-                                                lang='ru'
-                                                target='_blank'
-                                                rel='noreferrer'>
-                                                <img className='navbar__icon'
-                                                    src={!isSetting ? setting : settingYellow}
-                                                    alt='настройки' />
-                                            </a>
-                                        </li>
-                                        <li className='navbar__item'>
-                                            <a className='navbar__link'
-                                                href='#'
-                                                onPointerDown={toggleDownSupport}
-                                                onPointerUp={toggleUpSupport}
-                                                lang='ru'
-                                                target='_blank'
-                                                rel='noreferrer'>
-                                                <img className='navbar__icon'
-                                                    src={!isSupport ? support : supportYellow}
-                                                    alt='связаться с поддержкой' />
-                                            </a>
-                                        </li>
-                                        <li className='navbar__item'>
-                                            <button className='navbar__exit button'
-                                                onPointerDown={toggleDownExit}
-                                                onPointerUp={toggleUpExit}
-                                            >
-                                                <img className='navbar__icon'
-                                                    src={!isExit ? exit : exitYellow}
-                                                    alt='выйти из аккаунта' />
-                                            </button>
-                                        </li>
+                                        <Tooltip text='Уведомления'>
+                                            <li className='navbar__item'>
+                                                <a className='navbar__link'
+                                                    href='#'
+                                                    onPointerDown={toggleDownNotification}
+                                                    onPointerUp={toggleUpNotification}
+                                                    lang='ru'
+                                                    target='_blank'
+                                                    rel='noreferrer'>
+                                                    <img className='navbar__icon'
+                                                        src={!isNotification ? bell : bellYellow}
+                                                        alt='уведомления' />
+                                                </a>
+                                            </li>
+                                        </Tooltip>
+                                        <Tooltip text='Настройки'>
+                                            <li className='navbar__item'>
+                                                <a className='navbar__link'
+                                                    href='#'
+                                                    onPointerDown={toggleDownSetting}
+                                                    onPointerUp={toggleUpSetting}
+                                                    lang='ru'
+                                                    target='_blank'
+                                                    rel='noreferrer'>
+                                                    <img className='navbar__icon'
+                                                        src={!isSetting ? setting : settingYellow}
+                                                        alt='настройки' />
+                                                </a>
+                                            </li>
+                                        </Tooltip>
+                                        <Tooltip text='Связаться с поддержкой'>
+                                            <li className='navbar__item'>
+                                                <a className='navbar__link'
+                                                    href='#'
+                                                    onPointerDown={toggleDownSupport}
+                                                    onPointerUp={toggleUpSupport}
+                                                    lang='ru'
+                                                    target='_blank'
+                                                    rel='noreferrer'>
+                                                    <img className='navbar__icon'
+                                                        src={!isSupport ? support : supportYellow}
+                                                        alt='связаться с поддержкой' />
+                                                </a>
+                                            </li>
+                                        </Tooltip>
+                                        <Tooltip text='Выйти из аккаунта'>
+                                            <li className='navbar__item'>
+                                                <button className='navbar__exit button'
+                                                    onPointerDown={toggleDownExit}
+                                                    onPointerUp={toggleUpExit}
+                                                >
+                                                    <img className='navbar__icon'
+                                                        src={!isExit ? exit : exitYellow}
+                                                        alt='выйти из аккаунта' />
+                                                </button>
+                                            </li>
+                                        </Tooltip>
                                     </ul>
                                     <div className='navbar__avatar-block'>
                                         <img className='navbar__avatar'
@@ -270,20 +293,23 @@ function Navbar() {
                             )
                             : (<>
                                 <ul className='navbar__list navbar__list_full navbar__list_down'>
-                                    <li className='navbar__item'>
-                                        <a className='navbar__link navbar__link_full'
-                                            href='#'
-                                            onPointerDown={toggleDownNotification}
-                                            onPointerUp={toggleUpNotification}
-                                            lang='ru'
-                                            target='_blank'
-                                            rel='noreferrer'>
-                                            <img className='navbar__icon navbar__icon_full'
-                                                src={!isNotification ? bell : bellYellow}
-                                                alt='уведомления' />
-                                            Уведомления
-                                        </a>
-                                    </li>
+                                    <Tooltip text='Уведомления'>
+                                        <li className='navbar__item'>
+                                            <a className='navbar__link navbar__link_full'
+                                                href='#'
+                                                onPointerDown={toggleDownNotification}
+                                                onPointerUp={toggleUpNotification}
+                                                lang='ru'
+                                                target='_blank'
+                                                rel='noreferrer'>
+                                                <img className='navbar__icon navbar__icon_full'
+                                                    src={!isNotification ? bell : bellYellow}
+                                                    alt='уведомления' />
+                                                Уведомления
+                                            </a>
+                                        </li>
+                                    </Tooltip>
+                                    <Tooltip text='Настройки'>
                                     <li className='navbar__item'>
                                         <a className='navbar__link navbar__link_full'
                                             href='#'
@@ -298,6 +324,8 @@ function Navbar() {
                                             Настройки
                                         </a>
                                     </li>
+                                    </Tooltip>
+                                    <Tooltip text='Связаться с поддержкой'>
                                     <li className='navbar__item'>
                                         <a className='navbar__link navbar__link_full'
                                             href='#'
@@ -312,6 +340,8 @@ function Navbar() {
                                             Связаться с поддержкой
                                         </a>
                                     </li>
+                                    </Tooltip>
+                                    <Tooltip text='Выйти из аккаунта'>
                                     <li className='navbar__item'>
                                         <button className='navbar__exit navbar__exit_full button navbar__link_full'
                                             onPointerDown={toggleDownExit}
@@ -323,6 +353,7 @@ function Navbar() {
                                             Выйти
                                         </button>
                                     </li>
+                                    </Tooltip>
                                 </ul>
                                 <div className='navbar__avatar-block navbar__avatar-block_full'>
                                     <img className='navbar__avatar'
