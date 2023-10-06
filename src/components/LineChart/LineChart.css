@@ -1,0 +1,66 @@
+.linechart__container {
+    width: 1720px;
+}
+
+.linechart__header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 43px;
+    background-color: #F8FAFD;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.linechart__header {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 130%;
+    max-width: 420px;
+}
+
+.linechart__header_iconcontainer {}
+
+.linechart__image {
+    width: 48px;
+    height: 48px;
+}
+
+.linechart__filters {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F8FAFD;
+    padding-bottom: 24px;
+    padding-right: 24px;
+}
+
+.linechart__filters:nth-child(1) {
+    align-self: flex-end;
+}
+
+.filters__container {}
+
+.filters__label {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 125%;
+    letter-spacing: 0.18px;
+}
+
+.linechart__selector {
+    width: 211px;
+    margin-left: 12px;
+    border-radius: 12px;
+    background-color: #F2F2F2;
+    height: 47px;
+    color: #003C96;
+    border-color: #B4C8FF;
+    padding-left: 15px;
+}
+
+.linechart__preloader {
+    width: 54px;
+    height: 48px;
+}

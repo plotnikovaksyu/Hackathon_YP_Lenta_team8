@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css'
 // import { useDispatch } from 'react-redux';
 // import { loginUser } from '../../store/authSlice'
+import LineChart from '../LineChart/LineChart';
+import TableChart from '../TableChart/TableChart';
 
 import Auth from '../Auth/Auth';
 
@@ -22,6 +24,8 @@ function App() {
 
   return (
     <>
+      <LineChart></LineChart>
+      <TableChart></TableChart>
 
       <Routes>
         <Route path='/sign-in' element={
