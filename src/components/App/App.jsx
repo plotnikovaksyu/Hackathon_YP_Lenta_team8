@@ -1,10 +1,12 @@
-// import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
 // import { useDispatch } from 'react-redux';
 // import { loginUser } from '../../store/authSlice'
 
 import Auth from '../Auth/Auth';
+import './App.css';
+import Navbar from '../Navbar/Navbar';
+import PopupWithTk from '../PopupTK/PopupWithTk';
 
 function App() {
   // const dispatch = useDispatch();
@@ -22,7 +24,8 @@ function App() {
 
   return (
     <>
-
+  <Navbar />
+      <PopupWithTk></PopupWithTk>
       <Routes>
         <Route path='/sign-in' element={
           <Auth

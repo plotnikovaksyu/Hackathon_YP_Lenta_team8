@@ -1,0 +1,23 @@
+.tooltip-container {
+    position: relative;
+}
+
+
+.tooltip-box {
+    position: absolute;
+    background: #2C2A29;
+    color: #FFFFFF;
+    padding: 4px 8px 6px 8px;
+    border-radius: 8px;
+    left: calc(100%);
+    bottom: calc(100%);
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.visible {
+    display: block;
+}
