@@ -1,0 +1,27 @@
+.filters__label {
+    position: relative;
+    margin-left: 24px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 125%;
+    letter-spacing: 0.18px;
+}
+
+.tablechart__image {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 14px;
+    top: -2px
+}
+
+.tablechart__search {
+    width: 418px;
+    height: 48px;
+    border-radius: 12px;
+    border-style: 1.5px solid;
+    border-color: #E4E4E4;
+    background-color: #FFF;
+    padding-left: 56px;
+}
