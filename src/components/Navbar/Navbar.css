@@ -16,6 +16,7 @@
 
 .navbar_full {
     width: 352px;
+    z-index: 1;
 }
 
 .navbar__logo {
@@ -99,6 +100,7 @@
     letter-spacing: 0.18px;
     margin: 12px;
     width: 288px;
+    text-decoration: none;
 }
 
 .navbar__link_full:hover {
@@ -200,6 +202,7 @@
     font-weight: 450;
     line-height: 130%;
     margin: 0 0 4px 0;
+    color: #FFFFFF;
 }
 
 .navbar__avatar-id {

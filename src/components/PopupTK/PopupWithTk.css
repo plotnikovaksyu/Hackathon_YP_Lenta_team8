@@ -1,4 +1,17 @@
 .popup-tk {
+    background-color: rgba(0, 0, 0, .5);
+    width: 1698px;
+    height: 939px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .7s ease-out;
+}
+
+.popup-tk-is-opened {
     padding: 40px;
     box-sizing: border-box;
     width: 1698px;
@@ -8,6 +21,8 @@
     position: absolute;
     top: 70px;
     left: 157px;
+    visibility: visible;
+    opacity: 1;
 }
 
 .popup-tk__title {
@@ -23,7 +38,7 @@
     font-size: 20px;
     font-weight: 400;
     line-height: 130%;
-    margin: 0;
+    margin: 0 0 32px;
     width: 723px;
 }
 
@@ -31,10 +46,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-}
-
-.popup-tk__group input[type=radio] {
-    display: none;
 }
 
 .popup-tk__group {
@@ -46,10 +57,27 @@
     border: none;
 }
 
+.popup-tk__group .popup-tk__input[type=radio] {
+    display: none;
+
+    &:not(:disabled)~label {
+        cursor: pointer;
+    }
+}
+
+.popup-tk__group input[type=radio]:checked+.popup-tk__label {
+    outline: 1.5px solid #B4C8FF;
+    border-radius: 8px;
+    background-color: #F8FAFD;
+}
+
+.popup-tk__group input[type=radio]:checked+ .popup-tk__icon {
+    background-image: url('../../images/storeClick.svg');
+}
+
 .popup-tk__item {
-    width: 476px;
-    height: 76px;
-    padding: 24px;
+    width: 524px;
+    height: 124px;
     border-radius: 12px;
     border: 1.5px solid #E4E4E4;
     display: flex;
@@ -57,20 +85,20 @@
     flex-direction: column;
 }
 
-.popup-tk__item:active {
-   border-color:  #B4C8FF;
-   background-color: #F8FAFD;
-}
-
 .popup-tk__item:hover {
+    border-color: #B4C8FF;
+    background-color: #F8FAFD;
     cursor: pointer;
 }
 
 .popup-tk__label {
-    color: #72706F;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 130%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 524px;
+    height: 124px;
+    padding: 24px;
+    box-sizing: border-box;
 }
 
 .popup-tk__store {
@@ -79,9 +107,16 @@
     gap: 10px;
 }
 
+.popup-tk__label-text {
+    color: #72706F;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 130%;
+    margin: 0;
+}
+
 .popup-tk__text {
     color: #2C2A29;
-    font-family: Futura PT;
     font-size: 20px;
     font-weight: 450;
     line-height: 130%;
@@ -91,8 +126,6 @@
 .popup-tk__submit {
     width: 139px;
     height: 47px;
-    background-color: #003C96;
-    color: #FFFFFF;
     padding: 12px 20px;
     box-sizing: border-box;
     text-align: center;
@@ -102,19 +135,40 @@
     letter-spacing: 0.18px;
     margin-top: 32px;
     align-items: end;
+    border: none;
+    border-radius: 8px;
 }
 
-.popup-tk__submit:hover {
+.popup-tk__submit_included {
+    background-color: #003C96;
+    color: #FFFFFF;
+}
+
+.popup-tk__submit_included:hover {
     background-color: #001E64;
     cursor: pointer;
 }
 
-.popup-tk__submit:active {
+.popup-tk__submit_included:active {
     background-color: #001E64;
     color: #FFB900;
 }
 
 .popup-tk__submit_disabled {
-    background-color: #ABABAB;
-    color: #F2F2F2;
+    background-color: #F2F2F2;
+    color: #ABABAB;
+}
+
+.popup-tk__submit_disabled:hover {
+    cursor: not-allowed;
+    background-color: #F2F2F2;
+    color: #ABABAB;
+}
+
+.popup-tk__icon {
+    background-image: url('../../images/Store.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 24px;
 }
