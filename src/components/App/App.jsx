@@ -2,13 +2,13 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css'
 // import { useDispatch } from 'react-redux';
 // import { loginUser } from '../../store/authSlice'
-import LineChart from '../LineChart/LineChart';
-import TableChart from '../TableChart/TableChart';
+
 
 import Auth from '../Auth/Auth';
 import './App.css';
 import Navbar from '../Navbar/Navbar';
 import PopupWithTk from '../PopupTK/PopupWithTk';
+import FirstScreen from '../1stscrenn/1stscreen';
 
 function App() {
   // const dispatch = useDispatch();
@@ -26,11 +26,10 @@ function App() {
 
   return (
     <>
-      <LineChart></LineChart>
-      <TableChart></TableChart>
-  <Navbar />
-      <PopupWithTk></PopupWithTk>
+      <Navbar />
       <Routes>
+        <Route path='/' element={<PopupWithTk></PopupWithTk>} />
+        <Route path="/1screen" element={<FirstScreen />} />
         <Route path='/sign-in' element={
           <Auth
             login={handleLogin}
