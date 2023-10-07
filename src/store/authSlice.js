@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import * as api from '../utils/AuthApi';
+import { authorize } from '../utils/AuthApi';
 
 const user = JSON.parse(localStorage.getItem('user'));
 
 export const loginUser = createAsyncThunk(
     'user/loginUser',
-    async function ({ login, password }) {
+    async ({ email, password }) => {
         try {
-            const data = await api.authorize(login, password) //тут api;
+            const data = await authorize(email, password) //тут api;
             return { user: data };
         }
         catch (err) {
@@ -45,4 +45,5 @@ const authSlice = createSlice({
 
 })
 
-export default authSlice.reducer;
+const { reducer } = authSlice;
+export default reducer;

@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
-// import { useDispatch } from 'react-redux';
-// import { loginUser } from '../../store/authSlice'
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../store/authSlice'
 
 
 import Auth from '../Auth/Auth';
@@ -9,19 +9,25 @@ import './App.css';
 import Navbar from '../Navbar/Navbar';
 import PopupWithTk from '../PopupTK/PopupWithTk';
 import FirstScreen from '../1stscrenn/1stscreen';
+import { useNavigate } from "react-router-dom";
 
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  let navigate = useNavigate();
 
-  const handleLogin = (login, password) => {
-    console.log('test')
-    // dispatch(loginUser({ login, password }))
-    //   .then(() => {
-    //     console.log('1')
-    //   })
-    //   .catch(() => {
-    //     console.log('2')
-    //   })
+  const handleLogin = (email, password) => {
+    console.log('1')
+   
+
+    dispatch(loginUser({ email, password }))
+      .unwrap()
+      .then(() => {
+        navigate("/profile");
+        window.location.reload();
+      })
+      .catch(() => {
+        console.log('2')
+      })
   }
 
   return (
