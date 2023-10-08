@@ -12,7 +12,7 @@ services:
       - lenta_pg_data:/var/lib/postgresql/data
 
   backend:
-    image: anstane/lenta_backend
+    image: stixaxa/lenta_backend
     env_file: .env
     volumes:
       - lenta_static:/backend_static

@@ -1,0 +1,9 @@
+.section__table {
+    display: flex;
+    justify-content: flex-end
+}
+
+/* .table {
+    max-width: 1780px;
+    height: 452px;
+} */

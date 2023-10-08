@@ -11,6 +11,8 @@ import PopupWithTk from '../PopupTK/PopupWithTk';
 import FirstScreen from '../1stscrenn/1stscreen';
 import { useNavigate } from "react-router-dom";
 
+// import MainTable from '../MainTable/MainTable';
+
 function App() {
   const dispatch = useDispatch();
   let navigate = useNavigate();
@@ -32,6 +34,7 @@ function App() {
 
   return (
     <>
+    {/* <MainTable></MainTable> */}
       <Navbar />
       <Routes>
         <Route path='/' element={<PopupWithTk></PopupWithTk>} />
