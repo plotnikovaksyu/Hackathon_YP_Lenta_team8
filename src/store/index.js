@@ -7,5 +7,5 @@ const reducer = {
 
   export const store = configureStore({
     reducer: reducer,
-    devTools: true,
+    // devTools: true,
   });

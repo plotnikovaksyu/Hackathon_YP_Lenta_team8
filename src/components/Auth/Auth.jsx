@@ -1,5 +1,3 @@
-// import React from 'react';
-
 import './Auth.css';
 import '../../utils/opacity.css';
 import logo from '../../images/main_logo.svg';
@@ -8,12 +6,23 @@ import arrowYellow from '../../images/outlineY.svg'
 import eye from '../../images/eye.svg';
 import { useState } from 'react';
 
-function Auth({ login }) {
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../../store/authSlice'
+import { useNavigate } from "react-router-dom";
+
+function Auth() {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
 
     const [userRegistrationData, setUserRegistrationData] = useState({
-        login: "",
+        username: "",
         password: "",
     });
+
+    const { isLoggedIn } = useSelector((state) => state.user);
+    // const { isLoading } = useSelector((state) => state.user);
 
     const [errors, setErrors] = useState({});
     const [isValid, setIsValid] = useState(false);
@@ -38,7 +47,17 @@ function Auth({ login }) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        login();
+        const { username, password } = userRegistrationData;
+        // console.log(userRegistrationData)
+        dispatch(loginUser(userRegistrationData))
+            .unwrap()
+            .then(() => {
+                navigate('/1screen');
+            })
+            .catch(() => {
+                console.log('2')
+            })
+
     }
 
     //изменить иконку submit button при нажатии
@@ -49,7 +68,6 @@ function Auth({ login }) {
     const pushUpSubmitButton = () => {
         setPress(false);
     }
-
 
     return (
         <section className='auth'>
@@ -65,13 +83,13 @@ function Auth({ login }) {
                             <input className='auth__input auth__input_login'
                                 placeholder='Введите логин или ID'
                                 required
-                                name='login'
-                                type='email'
-                                value={userRegistrationData.login}
+                                name='username'
+                                type='text'
+                                value={userRegistrationData.username}
                                 onChange={handleChange}
                             >
                             </input>
-                            <span className="auth__error">{errors.login}</span>
+                            <span className="auth__error">{errors.username}</span>
                         </div>
                         <div className="input__container">
                             <input className='auth__input auth__input_password'

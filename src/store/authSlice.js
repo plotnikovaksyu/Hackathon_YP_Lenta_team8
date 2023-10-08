@@ -5,10 +5,11 @@ const user = JSON.parse(localStorage.getItem('user'));
 
 export const loginUser = createAsyncThunk(
     'user/loginUser',
-    async ({ email, password }) => {
+    async ({ username, password }) => {
         try {
-            const data = await authorize(email, password) //тут api;
-            return { user: data };
+            const data = await authorize(username, password)
+            // return { user: data };
+            console.log({ user: data })
         }
         catch (err) {
             console.log(err);
@@ -20,17 +21,16 @@ const initialState = user
     ? { isLoggedIn: true, user }
     : { isLoggedIn: false, user: null };
 
+// const initialState = user
+//     ? { isLoggedIn: true, user, isLoading: false }
+//     : { isLoggedIn: false, user: null, isLoading: false };
+
 const authSlice = createSlice({
     name: 'user',
-    // initialState: {
-    //     user: [],
-    //     status: null,
-    //     error: null,
-    // },
     initialState,
     extraReducers: {
         // [loginUser.pending]: (state, action) => { // во время загрузки крутим прелоуд
-        //     // state.status = 'loading',
+        //     // state.isLoading = true,
         //     // state.error - null,
         // },
         [loginUser.fulfilled]: (state, action) => {  // если ответ ок и данные получены
