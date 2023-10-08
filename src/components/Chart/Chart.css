@@ -1,5 +1,13 @@
 .chart {
     /* width: 1720px;
     height: 560px */
+    margin-top: 16px;
     margin-bottom: 24px;
+    width: 1720px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.chart__container {
+    height: 560px;
 }

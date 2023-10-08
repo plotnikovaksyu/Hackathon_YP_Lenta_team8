@@ -25,7 +25,7 @@ function LineChart() {
                                     <select className="linechart__selector">
                                         <option value="Хлеб">Хлеб</option>
                                         <option value="Молоко">Молоко</option>
-                                        <option value="Жопа">Жопа</option>
+                                        <option value="Жопа">Вода</option>
                                     </select>
                                 </label>
                                 <label className='filters__label'>Отображение:
@@ -41,6 +41,7 @@ function LineChart() {
                                         <option value="на 14 дней">по дням</option>
                                     </select>
                                 </label>
+                                <img className='linechart__image' src={threedots} />
                             </>}
                     </div>
                 </div>
