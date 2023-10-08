@@ -4,9 +4,10 @@
 
 .linechart__header_container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-bottom: 43px;
+    justify-content: space-between;
+
+    /* padding-bottom: 43px; */
     background-color: #F8FAFD;
     padding-left: 24px;
     padding-right: 24px;
@@ -25,14 +26,14 @@
 .linechart__image {
     width: 48px;
     height: 48px;
+    margin-left: 24px;
 }
 
 .linechart__filters {
     display: flex;
     justify-content: space-between;
     background-color: #F8FAFD;
-    padding-bottom: 24px;
-    padding-right: 24px;
+
 }
 
 .linechart__filters:nth-child(1) {
