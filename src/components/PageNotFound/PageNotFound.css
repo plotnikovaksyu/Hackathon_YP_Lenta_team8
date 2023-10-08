@@ -1,5 +1,6 @@
 .not-found {
-    background-color: black;
+    background-color: white;
+    width: 1920px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -8,16 +9,15 @@
 
 
 .not-found__title {
-    color: white;
+    color: #2C2A29;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 40px;
     line-height: 22px;
     text-align: center;
     margin: 0;
-    padding: 50px 0 50px;
+    padding: 350px 0 50px;
 }
 
 .not-found__span {
-    color: lightcoral;
-
+    color: #003C96;
 }

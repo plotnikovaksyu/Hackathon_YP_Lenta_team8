@@ -8,14 +8,18 @@
 
 Для запуска:
 
-    npm start 
+    npm run dev
 
 ## Ссылки
 
-Ссылка на GitHub Pages
+<!-- Ссылка на GitHub Pages https://plotnikovaksyu.github.io/Hackathon_YP_Lenta_team8/ -->
+
+* [Ссылка на  проект в GitHub Pages](https://plotnikovaksyu.github.io/Hackathon_YP_Lenta_team8)
 
 ### Авторизация 
 
+Регистрация пользователей происходит через администратора.
+Создан тестовый пользователь, данные для входа:
 USERNAME=admin
 PASSWORD=admin
 
@@ -30,10 +34,16 @@ PASSWORD=admin
 - [ ] Подключить api для авторизации (после получения данных от бэка) и защитить роуты
 - [ ] Заменить все статичные данные динамичными
 - [ ] Добавить обработчики ошибок
-- [ ] 
+- [ ] Реализовать фильтрацию
 
 
+**Технологии**
 
+Для написания проекта были задействованы следующие *технологиии и библиотеки*:
+
+:white_check_mark: стейт-менеджер Redux
+:white_check_mark: библиотека material ui 
+:white_check_mark: библиотека chart.js
     
 <!-- ### Правила работы с ветками и их названия
 

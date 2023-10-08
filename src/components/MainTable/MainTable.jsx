@@ -1,57 +1,74 @@
-import './MainTable.css'
-import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material';
+import './MainTable.css';
+import { useState } from 'react';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination } from '@mui/material';
 
 
-  function createData(shop, group, category, subcategory, SKU, product, unit, units, day1) {
-    return { shop, group, category, subcategory, SKU, product, unit, units, day1 };
-  }
+function MainTable({ columns, rows }) {
 
-  const rows = [
-    createData(123, 'Хлеб', 'Хлеб мелкоштучный', 'Булочки', '434691', 'Булочка с маком', 'шт', 65, 5),
-    createData(123, 'Хлеб', 'Хлеб мелкоштучный', 'Булочки', '434692', 'Булочка с повидлом', 'шт', 93, 5),
-    createData(123, 'Хлеб', 'Хлеб мелкоштучный', 'Булочки', '434693', 'Булочка с кунжутом', 'шт', 75, 5),
-    createData(123, 'Хлеб', 'Хлеб мелкоштучный', 'Булочки', '434694', 'Булочка с творогом', 'шт', 74, 12),
-    createData(123, 'Хлеб', 'Хлеб мелкоштучный', 'Булочки', '434695', 'Булочка с семенами льна', 'шт', 93, 5),
-  ];
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(15);
 
-function MainTable() {
+  const handleChangePage = (evt, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (evt) => {
+    setRowsPerPage(+evt.target.value);
+    setPage(0);
+  };
+
 
   return (
-    <section className='section__table'>
-    <TableContainer sx={{maxWidth:'1780px', height:'452px', boxShadow:'none'}} component={Paper}>
-      <Table size='medium' aria-label="прогноз спроса">
-        <TableHead>
-          <TableRow sx={{}}>
-            <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'450', fontSize:'18px', lineHeight:'130%'}}>ТК</TableCell>
-            <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'450', fontSize:'18px', lineHeight:'130%'}} align="right">Группа</TableCell>
-            <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'450', fontSize:'18px', lineHeight:'130%'}} align="right">Категория</TableCell>
-            <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'450', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">Подкатегория</TableCell>
-            <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'450', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">SKU</TableCell>
-            <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'450', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">Товар</TableCell>
-            <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'450', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">Ед.изм.</TableCell>
-            <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'450', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">Всего,&nbsp;ед.изм.</TableCell>
-            <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'450', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">День 1</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.shop}>
-              <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'300', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} component="th" scope="row">
-                {row.shop}
-              </TableCell>
-              <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'300', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">{row.group}</TableCell>
-              <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'300', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">{row.category}</TableCell>
-              <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'300', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">{row.subcategory}</TableCell>
-              <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'300', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">{row.SKU}</TableCell>
-              <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'300', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">{row.product}</TableCell>
-              <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'300', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">{row.unit}</TableCell>
-              <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'300', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">{row.units}</TableCell>
-              <TableCell sx={{fontFamily:'FUTURA PT', fontWeight:'300', fontSize:'18px', lineHeight:'130%', color:'#2C2A29'}} align="right">{row.day1}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <section className='section__table' id='section__table'>
+      <Paper >
+        <TableContainer sx={{ maxWidth: '1780px', height: '452px', boxShadow: 'none' }} component={Paper}>
+          <Table stickyHeader size='medium' aria-label="прогноз спроса">
+            <TableHead sx={{ zIndex: '0' }}>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableCell
+                    key={column.id}
+                    align={column.align}
+                    style={{ minWidth: column.minWidth }}
+                    sx={{ fontFamily: 'FUTURA PT', fontWeight: '400', fontSize: '18px', lineHeight: '130%', color: '#2C2A29' }}
+                  >
+                    {column.label}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+                return (
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                    {columns.map((column) => {
+                      const value = row[column.id];
+                      return (
+                        <TableCell key={column.id} align={column.align}
+                          sx={{ fontFamily: 'FUTURA PT', fontWeight: '300', fontSize: '18px', lineHeight: '130%', color: '#2C2A29' }}
+                        >
+                          {column.format && typeof value === 'number' ? column.format(value) : value}
+                        </TableCell>
+                      );
+                    })}
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <TablePagination
+          rowsPerPageOptions={[15, 25, 100]}
+          component="div"
+          count={rows.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+          labelRowsPerPage='Количество строк:'
+          labelDisplayedRows={({ to, count }) => `из ${count !== -1 ? count : `more than ${to}`}`}
+        />
+      </Paper>
     </section>
   );
 }

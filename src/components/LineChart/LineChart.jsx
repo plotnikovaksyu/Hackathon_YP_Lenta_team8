@@ -14,7 +14,7 @@ function LineChart() {
     return (
         <div className="linechart__container">
             <div className="linechart__header_container">
-                <h1 className="linechart__header">{location.pathname === '/1screen' ? 'График спроса на 14 дней' : 'График статистики продаж'}</h1>
+                <h1 className="linechart__header">{location.pathname === '/' ? 'График прогноза спроса на 14 дней' : 'График статистики продаж'}</h1>
                 <div className="linechart__filters">
                     <div className="filters__container">
                         {location.pathname === '/2screen'

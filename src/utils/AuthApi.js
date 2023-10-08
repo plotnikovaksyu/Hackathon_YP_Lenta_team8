@@ -1,9 +1,8 @@
 const BASE_URL = 'http://localhost:8000/api/v1';
 
-
 // авторизация
 export function authorize(username, password) {
-    return fetch(`${BASE_URL}/users/`, {
+    return fetch(`${BASE_URL}/auth/token/login/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -48,16 +48,15 @@ function Auth() {
     function handleSubmit(e) {
         e.preventDefault();
         const { username, password } = userRegistrationData;
-        // console.log(userRegistrationData)
+        console.log(userRegistrationData)
         dispatch(loginUser(userRegistrationData))
             .unwrap()
             .then(() => {
                 navigate('/1screen');
             })
-            .catch(() => {
-                console.log('2')
+            .catch((err) => {
+                console.log(err)
             })
-
     }
 
     //изменить иконку submit button при нажатии

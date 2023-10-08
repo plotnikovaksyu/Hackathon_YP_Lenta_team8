@@ -1,5 +1,3 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import './PageNotFound.css';
 
 function PageNotFound() {
@@ -9,7 +7,6 @@ function PageNotFound() {
                 <h3 className="not-found__title">
                     <span className="not-found__span">404</span> - Страница не найдена
                 </h3>
-                <Link className="button button_type_to-main" to="/">Вернуться на главную страницу</Link>
             </div>
         </>
     )
