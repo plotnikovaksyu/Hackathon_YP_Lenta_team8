@@ -43,8 +43,6 @@ function LineChart() {
                                 </label>
                             </>}
                     </div>
-
-
                 </div>
             </div>
 
