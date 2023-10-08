@@ -1,4 +1,5 @@
 // import React from 'react';
+
 import './Auth.css';
 import '../../utils/opacity.css';
 import logo from '../../images/main_logo.svg';
@@ -6,7 +7,6 @@ import arrow from '../../images/outline.svg';
 import arrowYellow from '../../images/outlineY.svg'
 import eye from '../../images/eye.svg';
 import { useState } from 'react';
-
 
 function Auth({ login }) {
 
@@ -66,7 +66,7 @@ function Auth({ login }) {
                                 placeholder='Введите логин или ID'
                                 required
                                 name='login'
-                                type='text'
+                                type='email'
                                 value={userRegistrationData.login}
                                 onChange={handleChange}
                             >
