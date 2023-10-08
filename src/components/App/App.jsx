@@ -8,10 +8,11 @@ import Auth from '../Auth/Auth';
 import './App.css';
 import Navbar from '../Navbar/Navbar';
 import PopupWithTk from '../PopupTK/PopupWithTk';
+
 import FirstScreen from '../1stscrenn/1stscreen';
 import { useNavigate } from "react-router-dom";
+import SecondScreen from '../2ndscreen/2ndscreen';
 
-// import MainTable from '../MainTable/MainTable';
 
 function App() {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ function App() {
       <Routes>
         <Route path='/' element={<PopupWithTk></PopupWithTk>} />
         <Route path="/1screen" element={<FirstScreen />} />
+        <Route path="/2screen" element={<SecondScreen />} />
         <Route path='/sign-in' element={
           <Auth
             login={handleLogin}

@@ -86,7 +86,7 @@
 
 .filters__label {
     position: relative;
-    display: flex;
+    /* display: flex; */
     flex-direction: row;
     margin-left: 24px;
     font-size: 18px;
