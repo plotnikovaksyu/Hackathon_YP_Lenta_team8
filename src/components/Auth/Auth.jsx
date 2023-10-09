@@ -21,8 +21,8 @@ function Auth() {
         password: "",
     });
 
-    const { isLoggedIn } = useSelector((state) => state.user);
-    // const { isLoading } = useSelector((state) => state.user);
+    const { isLoggedIn } = useSelector((state) => state.auth);
+    // const { isLoading } = useSelector((state) => state.Auth);
 
     const [errors, setErrors] = useState({});
     const [isValid, setIsValid] = useState(false);
@@ -48,11 +48,11 @@ function Auth() {
     function handleSubmit(e) {
         e.preventDefault();
         const { username, password } = userRegistrationData;
-        console.log(userRegistrationData)
         dispatch(loginUser(userRegistrationData))
-            .unwrap()
+            // .unwrap()
             .then(() => {
-                navigate('/1screen');
+                navigate('/');
+                window.location.reload();
             })
             .catch((err) => {
                 console.log(err)
