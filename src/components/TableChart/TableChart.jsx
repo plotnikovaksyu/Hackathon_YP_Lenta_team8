@@ -11,11 +11,11 @@ import NoFilter from "../../images/NoFilter.svg";
 import Grid from "../../images/Grid.svg"
 
 
-function TableChart() {
+function TableChart({ title }) {
     return (
         <div className="tablechart__container">
             <div className="tablechart__header_container">
-                <h1 className="tablechart__header">График спроса на 14 дней</h1>
+                <h1 className="tablechart__header">{title}</h1>
                 <div className='button__container'>
                     <div className="tablechart__header_buttoncontainer">
                         <div className="tablechart__button">Сохранить отчет</div>

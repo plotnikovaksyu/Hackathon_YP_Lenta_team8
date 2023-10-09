@@ -11,7 +11,7 @@
     transition: opacity .7s ease-out;
 }
 
-.popup-tk-is-opened {
+.popup-tk_is-opened {
     padding: 40px;
     box-sizing: border-box;
     width: 1698px;

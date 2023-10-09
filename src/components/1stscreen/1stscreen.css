@@ -1,4 +1,8 @@
 .firstscreen {
-    margin-left: 92px;
+    margin-left: 116px;
     margin-right: 24px;
+    height: 1080px;
+    width: 1780px;
+    overflow: scroll;
+    overflow: hidden;
 }

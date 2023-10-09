@@ -19,8 +19,8 @@
 
 Регистрация пользователей происходит на стороне администратора.
 Создан тестовый пользователь, данные для входа:
-USERNAME=admin
-PASSWORD=admin
+* USERNAME=admin
+* PASSWORD=admin
 
 
 ### Роуты
@@ -33,11 +33,11 @@ PASSWORD=admin
 
 Для написания проекта были задействованы следующие *технологиии и библиотеки*:
 
-:white_check_mark: проект написан на React JS
-:white_check_mark: настроен роутинг
-:white_check_mark: подключен стейт менеджер Redux
-:white_check_mark: для таблиц использована библиотека material ui 
-:white_check_mark: для графиков использована библиотека chart.js
+- :white_check_mark: проект написан на React JS
+- :white_check_mark: настроен роутинг
+- :white_check_mark: подключен стейт менеджер Redux
+- :white_check_mark: для таблиц использована библиотека material ui 
+- :white_check_mark: для графиков использована библиотека chart.js
 
 ### Планы по доработке
 - [ ] Подключить api для авторизации и защитить роуты

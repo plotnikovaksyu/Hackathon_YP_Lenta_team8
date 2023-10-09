@@ -1,5 +1,5 @@
 .linechart__container {
-    width: 1720px;
+    width: 1780px;
 }
 
 .linechart__header_container {
@@ -9,8 +9,8 @@
 
     /* padding-bottom: 43px; */
     background-color: #F8FAFD;
-    padding-left: 24px;
-    padding-right: 24px;
+    /* padding-left: 24px;
+    padding-right: 24px; */
 }
 
 .linechart__header {

@@ -22,7 +22,7 @@ function PopupWithTk() {
 
     return (
         // className={`popup-tk  ${isOpen ? 'popup-tk-is-opened' : '' }`}
-        <section className='popup-tk-is-opened'>
+        <section className='popup-tk popup-tk_is-opened'>
             <h2 className='popup-tk__title'>Выберите торговый комплекс для прогноза спроса</h2>
             <p className='popup-tk__subtitle'>Показаны магазины, доступные для вашего аккаунта.
                 Вы&nbsp;всегда можете изменить торговый комплекс в&nbsp;фильтре отчета.</p>

@@ -3,10 +3,10 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left: 24px;
-    padding-right: 24px;
+    /* padding-left: 24px;
+    padding-right: 24px; */
     margin-bottom: 16px;
-    width: 1720px;
+    width: 1780px;
     border-bottom: 1px solid #E4E4E4;
     height: 78px;
 }

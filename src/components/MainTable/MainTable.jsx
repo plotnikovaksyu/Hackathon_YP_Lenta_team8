@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination } from '@mui/material';
 
 
-function MainTable({ columns, rows }) {
+function MainTable({ columns, rows, label }) {
 
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(15);
@@ -21,8 +21,8 @@ function MainTable({ columns, rows }) {
   return (
     <section className='section__table' id='section__table'>
       <Paper >
-        <TableContainer sx={{ maxWidth: '1780px', height: '452px', boxShadow: 'none' }} component={Paper}>
-          <Table stickyHeader size='medium' aria-label="прогноз спроса">
+        <TableContainer sx={{ maxWidth: '1720px', height: '452px', boxShadow: 'none' }} component={Paper}>
+          <Table stickyHeader size='medium' aria-label={label}>
             <TableHead sx={{ zIndex: '0' }}>
               <TableRow>
                 {columns.map((column) => (

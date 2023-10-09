@@ -61,8 +61,8 @@ function SecondScreen() {
             <div className='secondscreen'>
                 <Header></Header>
                 <LineChart></LineChart>
-                <TableChart></TableChart>
-                <MainTable columns={columns} rows={rows}></MainTable>
+                <TableChart title='Статистика продаж'></TableChart>
+                <MainTable columns={columns} rows={rows}  label='статистика продаж'></MainTable>
             </div>
         </>
     )

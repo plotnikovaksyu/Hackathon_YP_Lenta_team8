@@ -4,6 +4,7 @@ import LineChart from '../LineChart/LineChart';
 import TableChart from '../TableChart/TableChart';
 import MainTable from '../MainTable/MainTable';
 import Navbar from '../Navbar/Navbar';
+// import PopupWithTk from '../PopupTK/PopupWithTk';
 
 
 const columns = [
@@ -71,10 +72,11 @@ function FirstScreen() {
         <>
             <Navbar />
             <div className='firstscreen'>
+                {/* <PopupWithTk></PopupWithTk> */}
                 <Header></Header>
                 <LineChart></LineChart>
-                <TableChart></TableChart>
-                <MainTable columns={columns} rows={rows}></MainTable>
+                <TableChart title='График спроса на 14 дней'></TableChart>
+                <MainTable columns={columns} rows={rows} label='прогноз спроса'></MainTable>
             </div>
         </>
 
